@@ -24,6 +24,10 @@ import { UserSettingsPage } from '@backstage/plugin-user-settings';
 import { apis } from './apis';
 import { entityPage } from './components/catalog/EntityPage';
 import { searchPage } from './components/search/SearchPage';
+<<<<<<< HEAD
+=======
+import kubernetes from './components/ kubernetes/Kubernetes';
+>>>>>>> fdadc29 (asfda)
 import { Root } from './components/Root';
 
 import { AlertDisplay, OAuthRequestDialog } from '@backstage/core-components';
@@ -35,8 +39,15 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common'
 import { HomepageCompositionRoot } from '@backstage/plugin-home';
 import { HomePage } from './components/home/HomePage';
 import { RegistryNamesPage } from '@internal/plugin-registry-names';
+<<<<<<< HEAD
 import { CarmenPage } from '@internal/plugin-carmen';
 import { WorkloadPage } from '@internal/plugin-workload';
+=======
+
+import { CarmenPage } from '@internal/plugin-carmen';
+import { WorkloadPage } from '@internal/plugin-workload';
+import { KubernetesPage } from '@internal/plugin-kubernetes';
+>>>>>>> fdadc29 (asfda)
 
 const app = createApp({
   apis,
@@ -72,6 +83,16 @@ const routes = (
     >
       {entityPage}
     </Route>
+<<<<<<< HEAD
+=======
+    <Route
+      path="/kubernetes"
+      element={<KubernetesPage />}
+    >
+      {kubernetes}
+    </Route>
+    
+>>>>>>> fdadc29 (asfda)
     <Route path="/docs" element={<TechDocsIndexPage />}>
       <DefaultTechDocsHome />
     </Route>
@@ -98,6 +119,10 @@ const routes = (
     <Route path="/registry-names" element={<RegistryNamesPage />}>Registry Page</Route>
     <Route path="/carmen" element={<CarmenPage />}/>
     <Route path="/workload" element={<WorkloadPage />}/>
+<<<<<<< HEAD
+=======
+    <Route path="/kubernetes" element={<KubernetesPage />}/>
+>>>>>>> fdadc29 (asfda)
   </FlatRoutes>
 );
 

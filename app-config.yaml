@@ -24,8 +24,18 @@ backend:
     methods: [GET, POST, PUT, DELETE]
     credentials: true
   database:
+<<<<<<< HEAD
     client: sqlite3
     connection: ':memory:'
+=======
+    # client: sqlite3
+    # connection: ':memory:'
+    client: pg
+    connection:
+      host: localhost
+      port: 5432
+      user: postgres
+>>>>>>> fdadc29 (asfda)
   cache:
     store: memory
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
@@ -45,6 +55,11 @@ proxy:
     changeOrigin: true
   '/registry-names':
     target: 'http:localhost:7007/'
+<<<<<<< HEAD
+=======
+  '/tech-radar':
+    target: 'http:localhost:7007/'
+>>>>>>> fdadc29 (asfda)
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -65,6 +80,7 @@ scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
+<<<<<<< HEAD
   import:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
@@ -108,3 +124,7 @@ catalog:
       target: https://github.com/backstage/software-templates/blob/main/scaffolder-templates/docs-template/template.yaml
       rules:
         - allow: [Template]
+=======
+  rules:
+    - allow: [Component, API, Location, Template]
+>>>>>>> fdadc29 (asfda)

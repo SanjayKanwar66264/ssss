@@ -38,6 +38,10 @@
     "express": "^4.17.1",
     "express-promise-router": "^4.1.0",
     "knex": "^0.21.6",
+<<<<<<< HEAD
+=======
+    "pg": "^8.7.3",
+>>>>>>> fdadc29 (asfda)
     "winston": "^3.2.1"
   },
   "devDependencies": {

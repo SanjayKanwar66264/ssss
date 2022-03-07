@@ -8,6 +8,7 @@ export const ExampleComponent = () => {
   const handleChange = (_: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
+<<<<<<< HEAD
   return (
     <Page themeId="tool">
       <Header
@@ -28,4 +29,7 @@ export const ExampleComponent = () => {
       </Box>
     </Page>
   );
+=======
+  return <ExampleFetchComponent />;
+>>>>>>> fdadc29 (asfda)
 };
