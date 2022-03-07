@@ -31,7 +31,7 @@ export interface RouterOptions {
   logger: Logger;
 }
 
-export const nexusTechRadarData: TechRadarLoaderResponse = {
+export const nabilTechRadarData: TechRadarLoaderResponse = {
   entries,
   quadrants,
   rings,
@@ -51,7 +51,7 @@ export async function createRouter(
   });
 
   router.get('/', (_, response) => {
-    response.status(200).send(nexusTechRadarData);
+    response.status(200).send(nabilTechRadarData);
   });
   router.use(errorHandler());
   return router;

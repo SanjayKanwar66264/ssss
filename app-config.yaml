@@ -24,10 +24,6 @@ backend:
     methods: [GET, POST, PUT, DELETE]
     credentials: true
   database:
-<<<<<<< HEAD
-    client: sqlite3
-    connection: ':memory:'
-=======
     # client: sqlite3
     # connection: ':memory:'
     client: pg
@@ -35,7 +31,6 @@ backend:
       host: localhost
       port: 5432
       user: postgres
->>>>>>> fdadc29 (asfda)
   cache:
     store: memory
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
@@ -55,11 +50,8 @@ proxy:
     changeOrigin: true
   '/registry-names':
     target: 'http:localhost:7007/'
-<<<<<<< HEAD
-=======
   '/tech-radar':
     target: 'http:localhost:7007/'
->>>>>>> fdadc29 (asfda)
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -80,51 +72,5 @@ scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
-<<<<<<< HEAD
-  import:
-    entityFilename: catalog-info.yaml
-    pullRequestBranchName: backstage-integration
-  rules:
-    - allow: [Component, System, API, Group, User, Resource, Location]
-  locations:
-    # Backstage example components
-    - type: url
-      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all-components.yaml
-
-    # Backstage example systems
-    - type: url
-      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all-systems.yaml
-
-    # Backstage example APIs
-    - type: url
-      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all-apis.yaml
-
-    # Backstage example resources
-    - type: url
-      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all-resources.yaml
-
-    # Backstage example organization groups
-    - type: url
-      target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/acme/org.yaml
-
-    # Backstage example templates
-    - type: url
-      target: https://github.com/backstage/software-templates/blob/main/scaffolder-templates/react-ssr-template/template.yaml
-      rules:
-        - allow: [Template]
-    - type: url
-      target: https://github.com/backstage/software-templates/blob/main/scaffolder-templates/springboot-grpc-template/template.yaml
-      rules:
-        - allow: [Template]
-    - type: url
-      target: https://github.com/spotify/cookiecutter-golang/blob/master/template.yaml
-      rules:
-        - allow: [Template]
-    - type: url
-      target: https://github.com/backstage/software-templates/blob/main/scaffolder-templates/docs-template/template.yaml
-      rules:
-        - allow: [Template]
-=======
   rules:
     - allow: [Component, API, Location, Template]
->>>>>>> fdadc29 (asfda)

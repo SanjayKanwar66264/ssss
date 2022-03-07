@@ -308,11 +308,7 @@ const systemPage = (
       <Grid container spacing={3} alignItems="stretch">
         {entityWarningContent}
         <Grid item md={6}>
-<<<<<<< HEAD
-          <EntityAboutCard variant="gridItem" />
-=======
           {/* <EntityAboutCard variant="gridItem" /> */}
->>>>>>> fdadc29 (asfda)
         </Grid>
         <Grid item md={6} xs={12}>
           <EntityCatalogGraphCard variant="gridItem" height={400} />

@@ -27,10 +27,7 @@ import catalog from './plugins/catalog';
 import scaffolder from './plugins/scaffolder';
 import proxy from './plugins/proxy';
 import techdocs from './plugins/techdocs';
-<<<<<<< HEAD
-=======
 import techRadar from './plugins/tech-radar';
->>>>>>> fdadc29 (asfda)
 import search from './plugins/search';
 import registryNames from './plugins/registry-names';
 import { PluginEnvironment } from './types';
@@ -85,11 +82,8 @@ async function main() {
   const searchEnv = useHotMemoize(module, () => createEnv('search'));
   const appEnv = useHotMemoize(module, () => createEnv('app'));
   const registryNamesEnv = useHotMemoize(module, () => createEnv('registryNames'));
-<<<<<<< HEAD
-=======
   const techRadarEnv = useHotMemoize(module, () => createEnv('techRadar'));
   
->>>>>>> fdadc29 (asfda)
 
   const apiRouter = Router();
   apiRouter.use('/catalog', await catalog(catalogEnv));
@@ -99,10 +93,7 @@ async function main() {
   apiRouter.use('/proxy', await proxy(proxyEnv));
   apiRouter.use('/search', await search(searchEnv));
   apiRouter.use('/registry-names', await registryNames(registryNamesEnv));
-<<<<<<< HEAD
-=======
   apiRouter.use('/tech-radar', await techRadar(techRadarEnv));
->>>>>>> fdadc29 (asfda)
 
 
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback

@@ -92,18 +92,8 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
       <SidebarDivider />
       <SidebarGroup label="Menu" icon={<MenuIcon />}>
         {/* Global nav, not org-specific */}
-<<<<<<< HEAD
-        <SidebarItem icon={HomeIcon} to="/" text="Home" />
-        <SidebarItem icon={HomeIcon} to="/registry-names" text="Home" />
-       <SidebarItem icon={CategoryIcon} to="catalog" text="Catalog" />
-        <SidebarItem icon={ExtensionIcon} to="api-docs" text="APIs" />
-        <SidebarItem icon={LibraryBooks} to="docs" text="Docs" />
-        <SidebarItem icon={CreateComponentIcon} to="create" text="Create..." />
-        {/* End global nav */}
-=======
        <SidebarItem icon={CategoryIcon} to="catalog" text="Catalog" />
         <SidebarItem icon={CreateComponentIcon} to="kubernetes" text="Kubernetes" />
->>>>>>> fdadc29 (asfda)
         <SidebarDivider />
         <SidebarScrollWrapper>
           <SidebarItem icon={MapIcon} to="tech-radar" text="Tech Radar" />
