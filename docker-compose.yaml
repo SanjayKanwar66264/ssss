@@ -1,0 +1,57 @@
+version: '3'
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:18.0.0
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KEYCLOAK_LOGLEVEL: INFO
+      ROOT_LOGLEVEL: INFO
+    ports:
+      - "8080:8080"
+      - "8787:8787"
+    networks:
+      keycloak:
+        aliases:
+          - keycloak.localtest.me
+    command:
+      - start-dev
+      - --features admin-fine-grained-authz
+  oauth2-proxy:
+    container_name: oauth2-proxy
+    image: quay.io/oauth2-proxy/oauth2-proxy:v7.2.1
+    command:
+     # --http_address="0.0.0.0:4180",
+      --client_secret="72341b6d-7065-4518-a0e4-50ee15025608",
+      --client_id="oauth2-proxy",
+      --cookie-secure="false",
+      --redirect_url="http://oauth2-proxy.localtest.me:4180/oauth2/callback",
+      --oidc_issuer_url="http://keycloak.localtest.me:8080/auth/realms/master",
+      --provider="oidc" 
+      --provider_display_name="Keycloak",
+      --upstreams="http://httpbin"
+    hostname: oauth2-proxy
+    volumes:
+      - "./oauth2-proxy-keycloak.cfg:/oauth2-proxy.cfg"
+    restart: unless-stopped
+    networks:
+      keycloak: {}
+      httpbin: {}
+      oauth2-proxy:
+        aliases: 
+          - oauth2-proxy.localtest.me
+    depends_on:
+      - httpbin
+      - keycloak
+    ports:
+      - 4180:4180/tcp
+  httpbin:
+    container_name: httpbin
+    image: kennethreitz/httpbin:latest
+    hostname: httpbin
+    networks:
+      httpbin: {}
+networks:
+  httpbin: {}
+  keycloak: {}
+  oauth2-proxy: {}
