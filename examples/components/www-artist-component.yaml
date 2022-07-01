@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: www-artist
-  description: Sanjay Testing
+  description: HEllo
 spec:
   type: website
   lifecycle: production
