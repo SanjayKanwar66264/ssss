@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: www-artist
-  description: SANJAY FINAL FINAL
+  description: DESCRIPTION
 spec:
   type: website
   lifecycle: production
