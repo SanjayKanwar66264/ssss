@@ -2,10 +2,10 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: www-artist
-  description: AAAAAA
+  description: BBBBBB
 spec:
   type: website
   lifecycle: production
-  owner: team-a
+  owner: team-c
   system: artist-engagement-portal
   consumesApis: ['component:artist-lookup']
