@@ -2,10 +2,10 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: www-artist
-  description: SANJAY LATEST
+  description: SANJAY LATEST1111
 spec:
   type: website
   lifecycle: production
-  owner: team-a
+  owner: team-c
   system: artist-engagement-portal
   consumesApis: ['component:artist-lookup']
