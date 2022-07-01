@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: www-artist
-  description: Artist main website
+  description: Sanjay Testing
 spec:
   type: website
   lifecycle: production
